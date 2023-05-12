@@ -1,4 +1,6 @@
-require './lib/node'
+require '../lib/node'
+require 'pry'
+require 'rspec'
 
 describe Node do
     it "exists with readable attributes" do
