@@ -1,4 +1,4 @@
-require '../lib/node'
+require './lib/node'
 require 'pry'
 require 'rspec'
 
