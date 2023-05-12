@@ -3,7 +3,7 @@ require 'pry'
 require 'rspec'
 
 describe Node do
-    it "exists with readable attributes" do
+    it "exists as readable" do
       node = Node.new("plop")
       
       expect(node).to be_an_instance_of(Node)
