@@ -1,6 +1,4 @@
 require './lib/node'
-require 'pry'
-require 'rspec'
 
 describe Node do
     it "exists as readable" do
