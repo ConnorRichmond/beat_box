@@ -33,9 +33,9 @@ class LinkedList
   
     def to_string
         current_node = @head
-        node_data = ""
+        node_data = ''
         while current_node != nil
-          node_data << current_node.data + " "
+          node_data << current_node.data + ' '
           current_node = current_node.next_node
         end
         node_data.strip
@@ -52,7 +52,7 @@ class LinkedList
           position -= 1
         end
       
-        raise "Position out of range" if position > 0
+        raise 'Position out of range' if position > 0
       
         new_node.next_node = current_node
         prev_node&.next_node = new_node || @head = new_node
