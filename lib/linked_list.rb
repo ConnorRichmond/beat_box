@@ -41,6 +41,23 @@ class LinkedList
         node_data.strip
     end
 
+    def insert(position, data)
+        new_node = Node.new(data)
+        current_node = @head
+        prev_node = nil
+      
+        while position > 0 && !current_node.nil?
+          prev_node = current_node
+          current_node = current_node.next_node
+          position -= 1
+        end
+      
+        raise "Position out of range" if position > 0
+      
+        new_node.next_node = current_node
+        prev_node&.next_node = new_node || @head = new_node
+    end
+
 #end for class LinkedList
 end
   
