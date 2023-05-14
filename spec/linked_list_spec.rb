@@ -22,7 +22,7 @@ describe LinkedList do
         expect(list.head.next_node).to be_an_instance_of(Node)
     end
 
-    it "has a count method" do
+    it "counts total methods" do
         list = LinkedList.new
     
         list.append("doop")
@@ -31,7 +31,7 @@ describe LinkedList do
         expect(list.count).to eq(2)
     end
       
-    it "has a to_string method" do
+    it "strings elements" do
         list = LinkedList.new
     
         list.append("doop")
