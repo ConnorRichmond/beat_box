@@ -14,7 +14,6 @@ describe LinkedList do
         list = LinkedList.new
     
         expect(list.append("doop")).to eq("doop")
-        expect(list).to eq(list)
         expect(list.head).to be_an_instance_of(Node)
         expect(list.head.next_node).to eq(nil)
     
