@@ -90,6 +90,15 @@ class LinkedList
         result.join(' ')
     end
 
+    def includes?(value)
+        current_node = @head
+        while current_node != nil
+          return true if current_node.data == value
+          current_node = current_node.next_node
+        end
+        false
+    end
+
 #end for class LinkedList
 end
   
