@@ -48,6 +48,38 @@ describe LinkedList do
         expect(list.to_string).to eq('plop suu')
 
         list.insert(1,'woo')
-        
+        expect(list.to_string).to eq('plop woo suu')
+        expect(list.count).to eq(3)
     end
+
+    it 'adds to begining of list' do
+        list = LinkedList.new
+
+        list.append('plop') 
+        list.append('suu')
+        expect(list.count).to eq(2)
+        expect(list.to_string).to eq('plop suu')
+
+        list.prepend('dop')
+        expect(list.count).to eq(3)
+        expect(list.to_string).to eq('dop plop suu')
+    end
+
+    it 'returns number of elements after a position' do
+        list = LinkedList.new
+
+        list.append('deep')
+        list.append('woo')
+        list.append('shi')
+        list.append('shu')
+        list.append('bloop')
+        expect(list.to_string).to eq('deep woo shi shu bloop')
+        expect(list.count).to eq(5)
+
+        expect(list.find(2,1)).to eq('shi')
+        expect(list.find(1,3)).to eq('woo shi shu')
+    end
+
+
+
 end
