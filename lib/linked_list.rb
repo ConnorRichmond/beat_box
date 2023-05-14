@@ -118,7 +118,6 @@ class LinkedList
         data
     end
 
-    
 #end for class LinkedList
 end
   

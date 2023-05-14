@@ -93,4 +93,18 @@ describe LinkedList do
         expect(list.includes?('dep')).to eq(false)
     end
 
+    it 'removes from end of list' do
+        list = LinkedList.new
+
+        list.append('deep')
+        list.append('woo')
+        list.append('shi')
+        list.append('shu')
+        list.append('bloop')
+
+        expect(list.pop).to eq('bloop')
+        expect(list.pop).to eq('shu')
+        expect(list.to_string).to eq('deep woo shi')
+    end
+
 end
