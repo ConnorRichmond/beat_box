@@ -21,7 +21,7 @@ describe LinkedList do
         expect(list.head.next_node).to be_an_instance_of(Node)
     end
 
-    it "counts total methods" do
+    it 'counts total methods' do
         list = LinkedList.new
     
         list.append("doop")
@@ -30,7 +30,7 @@ describe LinkedList do
         expect(list.count).to eq(2)
     end
       
-    it "strings elements" do
+    it 'strings elements' do
         list = LinkedList.new
     
         list.append("doop")
@@ -39,4 +39,15 @@ describe LinkedList do
         expect(list.to_string).to eq("doop deep")
     end
 
+    it 'inserts to chosen position' do
+        list = LinkedList.new
+
+        list.append('plop') 
+        list.append('suu')
+        expect(list.count).to eq(2)
+        expect(list.to_string).to eq('plop suu')
+
+        list.insert(1,'woo')
+        
+    end
 end
