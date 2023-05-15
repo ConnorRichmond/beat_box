@@ -27,4 +27,14 @@ describe BeatBox do
         #bb.play
     end
 
+    it 'adds to begining and end' do
+        bb = BeatBox.new
+
+        bb.append('deep')
+        bb.append('do')
+        bb.prepend('da')
+
+        expect(bb.all).to eq('da deep do')
+    end
+
 end
