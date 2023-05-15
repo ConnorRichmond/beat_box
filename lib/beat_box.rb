@@ -34,5 +34,4 @@ class BeatBox
         @list.to_string
     end
 
-
 end

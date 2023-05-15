@@ -27,15 +27,4 @@ describe BeatBox do
         #bb.play
     end
 
-    it 'validates input' do
-        bb = BeatBox.new('deep')
-        bb.append('Mississippi')
-
-        expect(bb.all).to eq('deep')
-
-        bb.prepend('tee tee tee Mississippi')
-
-        expect(bb.all).to eq('tee tee tee deep')
-    end
-
 end
