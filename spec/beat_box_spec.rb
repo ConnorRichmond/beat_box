@@ -38,4 +38,12 @@ describe BeatBox do
         expect(bb.all).to eq('da deep do deep')
     end
 
+    it 'ignores beat if not valid' do
+        bb = BeatBox.new
+        bb.append('deep')
+        bb.append('Mississippi')
+        expect(bb.all).to eq('deep')
+        bb.prepend('tee tee tee mississippi')
+        expect(bb.all).to eq('tee tee tee deep')
+    end
 end
