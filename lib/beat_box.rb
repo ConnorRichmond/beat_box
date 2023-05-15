@@ -14,6 +14,11 @@ class BeatBox
     end
 
     def count
-        @list.count
+        list.count
     end
+
+    def play
+        `say -r 200 -v nathan 'deep doo ditt woo hoo shu'`
+    end
+
 end
