@@ -1,6 +1,6 @@
 class BeatBox
 
-    valid_beats = ['tee', 'dee', 'deep', 'bop', 'boop', 'la', 'na'].freeze
+    beats_list = ['tee', 'dee', 'deep', 'bop', 'boop', 'la', 'na', 'ditt', 'doo', 'shu', 'woo', 'hoo']
 
     attr_reader :list
 
