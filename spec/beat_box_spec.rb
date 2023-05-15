@@ -24,7 +24,26 @@ describe BeatBox do
         expect(bb.append('deep doo ditt woo hoo shu'))
         expect(bb.count).to eq(6)
         expect(bb.list.count).to eq(6)
-        bb.play
+        #bb.play
     end
 
+    it 'adds to begining and end' do
+        bb = BeatBox.new
+
+        bb.append('deep')
+        bb.append('do')
+        bb.prepend('da')
+        bb.append('deep')
+
+        expect(bb.all).to eq('da deep do deep')
+    end
+
+    it 'ignores beat if not valid' do
+        bb = BeatBox.new
+        bb.append('deep')
+        bb.append('Mississippi')
+        expect(bb.all).to eq('deep')
+        bb.prepend('tee tee tee mississippi')
+        expect(bb.all).to eq('tee tee tee deep')
+    end
 end
