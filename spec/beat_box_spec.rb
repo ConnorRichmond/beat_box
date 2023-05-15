@@ -33,8 +33,9 @@ describe BeatBox do
         bb.append('deep')
         bb.append('do')
         bb.prepend('da')
+        bb.append('deep')
 
-        expect(bb.all).to eq('da deep do')
+        expect(bb.all).to eq('da deep do deep')
     end
 
 end
