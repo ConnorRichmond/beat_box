@@ -2,8 +2,8 @@ class BeatBox
 
     attr_reader :list
 
-    def initialize(list = LinkedList.new)
-        @list = list
+    def initialize
+        @list = LinkedList.new
     end
 
     def append(data)
@@ -18,7 +18,7 @@ class BeatBox
     end
 
     def play
-        `say -r 200 -v nathan 'deep doo ditt woo hoo shu'`
+        `say -r 200 -v nathan #{@list.to_string}`
     end
 
 end
