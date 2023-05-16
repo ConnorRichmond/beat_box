@@ -24,7 +24,8 @@ describe BeatBox do
         expect(bb.append('deep doo ditt woo hoo shu'))
         expect(bb.count).to eq(6)
         expect(bb.list.count).to eq(6)
-        #bb.play
+        # expect{bb.play}.not_to raise_error
+
     end
 
     it 'adds to begining and end' do
@@ -56,13 +57,13 @@ describe BeatBox do
 
         expect(bb.voice = 'Daniel').to eq('Daniel')
         expect(bb.reset_voice).to eq('Boing')
-
-        # bb.rate = 300
-        # bb.play
-        # bb.voice = 'Daniel'
-        # bb.play
-        # bb.reset_rate
-        # bb.reset_voice
-        # bb.play
+        # expect{bb.play}.not_to raise_error
+        bb.rate = 300
+        # expect{bb.play}.not_to raise_error
+        bb.voice = 'Daniel'
+        # expect{bb.play}.not_to raise_error
+        bb.reset_rate
+        bb.reset_voice
+        # expect{bb.play}.not_to raise_error
     end
 end
