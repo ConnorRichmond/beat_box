@@ -57,12 +57,12 @@ describe BeatBox do
         expect(bb.voice = 'Daniel').to eq('Daniel')
         expect(bb.reset_voice).to eq('Boing')
 
-        bb.rate = 300
-        bb.play
-        bb.voice = 'Daniel'
-        bb.play
-        bb.reset_rate
-        bb.reset_voice
-        bb.play
+        # bb.rate = 300
+        # bb.play
+        # bb.voice = 'Daniel'
+        # bb.play
+        # bb.reset_rate
+        # bb.reset_voice
+        # bb.play
     end
 end

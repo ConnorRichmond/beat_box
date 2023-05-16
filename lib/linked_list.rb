@@ -2,10 +2,13 @@ class LinkedList
 
     attr_reader :head
   
+    # head starts empty
     def initialize
       @head = nil
     end
   
+    # checks if list is empty, creates new node. else starts a new node with head then moves to the end.
+    # adds data to the end and creates new list.
     def append(data)
       if @head.nil?
         @head = Node.new(data)
@@ -18,7 +21,16 @@ class LinkedList
       end
       data
     end
-  
+
+    # adds new data to the begining of the list and makes it the head
+    def prepend(data)
+      new_node = Node.new(data)
+      new_node.next_node = @head
+      @head = new_node
+      data
+    end
+
+    # counts total number of nodes starting at the head
     def count
         node_counter = 0
         current_node = @head
@@ -31,6 +43,7 @@ class LinkedList
         node_counter
     end
   
+    # stores data to a string
     def to_string
         current_node = @head
         node_data = ''
@@ -41,45 +54,41 @@ class LinkedList
         node_data.strip
     end
 
+    # allows data to be inserted anywhere into the list.
+    # defines begining of the list as the head
     def insert(position, data)
         new_node = Node.new(data)
         current_node = @head
         prev_node = nil
       
+
         while position > 0 && !current_node.nil?
           prev_node = current_node
           current_node = current_node.next_node
           position -= 1
         end
       
-        raise 'Position out of range' if position > 0
       
         new_node.next_node = current_node
         prev_node&.next_node = new_node || @head = new_node
     end
 
-    def prepend(data)
-        new_node = Node.new(data)
-        new_node.next_node = @head
-        @head = new_node
-        data
-    end
-
+    # checks for number of nodes from a given position. returns nil if empty
     def find(start_pos, count)
         return nil if @head.nil?
         current_node = @head
         node_counter = 0
       
-        # Traverse the list until you reach the starting position
+        # Traverse the list until reaches the starting position
         while node_counter < start_pos && !current_node.nil?
           current_node = current_node.next_node
           node_counter += 1
         end
       
-        # If the starting position is out of range, return nil
+
         return nil if current_node.nil?
       
-        # Iterate over the next 'count' nodes and store their data in an array
+
         result = []
         while node_counter < start_pos + count && !current_node.nil?
           result << current_node.data
@@ -90,6 +99,7 @@ class LinkedList
         result.join(' ')
     end
 
+    # finds if given data is in the list, returns true or false
     def includes?(value)
         current_node = @head
         while current_node != nil
@@ -99,6 +109,8 @@ class LinkedList
         false
     end
 
+    # removes data from the end of the list
+    # returns nil if makes list empty
     def pop
         return nil if @head.nil?
       
@@ -118,6 +130,6 @@ class LinkedList
         data
     end
 
-#end for class LinkedList
+#end of class
 end
   
