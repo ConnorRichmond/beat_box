@@ -46,4 +46,23 @@ describe BeatBox do
         bb.prepend('tee tee tee mississippi')
         expect(bb.all).to eq('tee tee tee deep')
     end
+
+    it 'changes speed and voice' do
+        bb = BeatBox.new
+        bb.append('deep dop dop deep')
+
+        expect(bb.rate = 500).to eq(500)
+        expect(bb.reset_rate).to eq(200)
+
+        expect(bb.voice = 'Daniel').to eq('Daniel')
+        expect(bb.reset_voice).to eq('Boing')
+
+        bb.rate = 300
+        bb.play
+        bb.voice = 'Daniel'
+        bb.play
+        bb.reset_rate
+        bb.reset_voice
+        bb.play
+    end
 end

@@ -1,13 +1,16 @@
 class BeatBox
 
     attr_reader :list
+    attr_accessor :rate, :voice
 
     def initialize(list = LinkedList.new)
         @list = list
+        @rate = 200
+        @voice = 'Boing'
     end
 
     def beats_list
-        ['tee', 'dee', 'deep', 'bop', 'boop', 'la', 'na', 'ditt', 'doo', 'shu', 'woo', 'hoo', 'da', 'do']
+        ['tee', 'dee', 'deep', 'bop', 'boop', 'la', 'na', 'ditt', 'doo', 'shu', 'woo', 'hoo', 'da', 'do', 'dop']
     end
 
     def append(data)
@@ -29,11 +32,19 @@ class BeatBox
     end
 
     def play
-        `say -r 200 -v nathan #{@list.to_string}`
+        `say -r #{rate} -v #{voice} #{@list.to_string}`
     end
 
     def all
         @list.to_string
+    end
+
+    def reset_rate
+        @rate = 200
+    end
+
+    def reset_voice
+        @voice = 'Boing'
     end
 
 end
